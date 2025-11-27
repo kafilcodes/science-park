@@ -30,7 +30,7 @@ export function Header() {
         <header className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center pt-4 px-4">
             {/* Marquee Section */}
             <div className="w-full max-w-7xl mb-2 rounded-full overflow-hidden">
-                <Marquee text="Welcome to Science Park Dhamtari! Explore the wonders of science and nature. | Opening Hours: 10:00 AM - 6:00 PM | Special Exhibits on Weekends!" speed={30} className="py-1 text-primary font-medium" />
+                <Marquee text="Welcome to Science Park Dhamtari! Explore the wonders of science and nature. | Opening Hours: 10:00 AM - 6:00 PM | Special Exhibits on Weekends!" speed={5} className="py-1 text-primary font-medium" />
             </div>
 
             {/* Main Navbar */}
