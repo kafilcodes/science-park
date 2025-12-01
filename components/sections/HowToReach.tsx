@@ -31,7 +31,7 @@ import navigationAnimation from "@/public/assets/lottie/Service Area.json";
 const travelOptions = [
     {
         animation: carAnimation,
-        title: "By Car / Bus",
+        title: "By Road",
         description: "Located 15km from Dhamtari city center via Gangrel Dam Road. Ample parking available.",
         delay: 0.2
     },

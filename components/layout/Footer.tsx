@@ -7,11 +7,15 @@ export function Footer() {
         <footer className="w-full border-t border-white/10 bg-black/5 backdrop-blur-xl py-12">
             <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <div className="space-y-4">
-                    <div className="flex items-center gap-2">
-                        <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
-                        <h3 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-                            {siteConfig.name}
-                        </h3>
+                    <div className="flex items-center gap-3">
+                        <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-teal-500/50 bg-white/10 p-1">
+                            <img src="/logo.png" alt="Logo" className="h-full w-full object-contain" />
+                        </div>
+                        <div className="flex flex-col leading-none justify-center">
+                            <span className="text-m font-bold text-teal-500 tracking-tight">Science</span>
+                            <span className="text-sm font-semibold text-teal-400 tracking-wide -mt-0.5">Park</span>
+                            <span className="text-[10px] text-teal-300/80 uppercase tracking-widest -mt-0.5">Dhamtari</span>
+                        </div>
                     </div>
                     <p className="text-sm text-muted-foreground">
                         {siteConfig.description}
@@ -20,16 +24,16 @@ export function Footer() {
                 <div className="flex flex-col gap-4">
                     <h3 className="font-bold text-lg">Quick Links</h3>
                     <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
-                        <Link href="#about" className="hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="#about" className="hover:text-teal-400 transition-colors flex items-center gap-2">
                             <Info className="h-4 w-4" /> About Us
                         </Link>
-                        <Link href="#exhibits" className="hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="#exhibits" className="hover:text-teal-400 transition-colors flex items-center gap-2">
                             <FlaskConical className="h-4 w-4" /> Exhibits
                         </Link>
-                        <Link href="#gallery" className="hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="#gallery" className="hover:text-teal-400 transition-colors flex items-center gap-2">
                             <ImageIcon className="h-4 w-4" /> Gallery
                         </Link>
-                        <Link href="#contact" className="hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="#contact" className="hover:text-teal-400 transition-colors flex items-center gap-2">
                             <Phone className="h-4 w-4" /> Contact
                         </Link>
                     </nav>
@@ -45,10 +49,10 @@ export function Footer() {
                 <div className="space-y-4">
                     <h3 className="text-lg font-semibold">Follow Us</h3>
                     <div className="flex gap-4">
-                        <Link href={siteConfig.links.facebook} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="h-6 w-6" /></Link>
-                        <Link href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Twitter className="h-6 w-6" /></Link>
-                        <Link href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-6 w-6" /></Link>
-                        <Link href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-6 w-6" /></Link>
+                        <Link href={siteConfig.links.facebook} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-teal-400 transition-colors"><Facebook className="h-6 w-6" /></Link>
+                        <Link href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-teal-400 transition-colors"><Twitter className="h-6 w-6" /></Link>
+                        <Link href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-teal-400 transition-colors"><Instagram className="h-6 w-6" /></Link>
+                        <Link href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-teal-400 transition-colors"><Linkedin className="h-6 w-6" /></Link>
                     </div>
                 </div>
             </div>

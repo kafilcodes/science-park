@@ -7,42 +7,21 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 
 const images = [
-    {
-        id: 1,
-        src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
-        alt: "Science Experiment",
-        category: "Indoor",
-    },
-    {
-        id: 2,
-        src: "https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?auto=format&fit=crop&q=80&w=800",
-        alt: "Outdoor Park",
-        category: "Outdoor",
-    },
-    {
-        id: 3,
-        src: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
-        alt: "Physics Model",
-        category: "Indoor",
-    },
-    {
-        id: 4,
-        src: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=800",
-        alt: "Dinosaur Statue",
-        category: "Outdoor",
-    },
-    {
-        id: 5,
-        src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
-        alt: "Space Exhibit",
-        category: "Indoor",
-    },
-    {
-        id: 6,
-        src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-        alt: "Robot Workshop",
-        category: "Events",
-    },
+    { id: 1, src: "/assets/images/1.png", alt: "Science Park Entrance", category: "Outdoor" },
+    { id: 2, src: "/assets/images/2.png", alt: "Interactive Exhibits", category: "Indoor" },
+    { id: 3, src: "/assets/images/3.png", alt: "Lush Gardens", category: "Outdoor" },
+    { id: 4, src: "/assets/images/4.png", alt: "Educational Models", category: "Indoor" },
+    { id: 5, src: "/assets/images/5.png", alt: "Play Area", category: "Outdoor" },
+    { id: 6, src: "/assets/images/6.jpg", alt: "Science Model", category: "Indoor" },
+    { id: 7, src: "/assets/images/7.jpg", alt: "Park View", category: "Outdoor" },
+    { id: 8, src: "/assets/images/8.jpg", alt: "Exhibit Hall", category: "Indoor" },
+    { id: 9, src: "/assets/images/9.jpg", alt: "Learning Center", category: "Indoor" },
+    { id: 10, src: "/assets/images/10.webp", alt: "Nature Walk", category: "Outdoor" },
+    { id: 11, src: "/assets/images/11.jpg", alt: "Group Tour", category: "Events" },
+    { id: 12, src: "/assets/images/12.jpg", alt: "Student Workshop", category: "Events" },
+    { id: 13, src: "/assets/images/13.webp", alt: "Science Demo", category: "Events" },
+    { id: 14, src: "/assets/images/14.jpg", alt: "Outdoor Exhibit", category: "Outdoor" },
+    { id: 15, src: "/assets/images/15.jpg", alt: "Evening View", category: "Outdoor" },
 ]
 
 export function Gallery() {
@@ -82,46 +61,62 @@ export function Gallery() {
 
             <div className="columns-2 md:columns-3 gap-4 space-y-4">
                 {images.map((image, index) => (
-                    <Dialog key={index}>
-                        <DialogTrigger asChild>
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className={cn(
-                                    "relative cursor-pointer overflow-hidden rounded-2xl group border border-white/10 shadow-lg break-inside-avoid mb-4"
-                                )}
-                            >
-                                <div className="relative w-full overflow-hidden">
-                                    <Image
-                                        src={image.src}
-                                        alt={image.alt}
-                                        width={800}
-                                        height={600}
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <p className="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{image.alt}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none" aria-describedby="dialog-description">
-                            <div className="sr-only" id="dialog-description">Enlarged view of {image.alt}</div>
-                            <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                                <Image
-                                    src={image.src}
-                                    alt={image.alt}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                        </DialogContent>
-                    </Dialog>
+                    <GalleryItem key={index} image={image} index={index} />
                 ))}
             </div>
         </section>
     )
 }
+
+function GalleryItem({ image, index }: { image: typeof images[0], index: number }) {
+    const [isLoading, setIsLoading] = useState(true)
+
+    return (
+        <Dialog>
+            <DialogTrigger asChild>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className={cn(
+                        "relative cursor-pointer overflow-hidden rounded-2xl group border border-white/10 shadow-lg break-inside-avoid mb-4 bg-white/5"
+                    )}
+                >
+                    <div className="relative w-full overflow-hidden min-h-[200px]">
+                        {isLoading && (
+                            <div className="absolute inset-0 bg-white/10 animate-pulse z-10" />
+                        )}
+                        <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={800}
+                            height={600}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className={cn(
+                                "w-full h-auto object-cover transition-all duration-500 group-hover:scale-110",
+                                isLoading ? "opacity-0" : "opacity-100"
+                            )}
+                            onLoad={() => setIsLoading(false)}
+                        />
+                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+                            <p className="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{image.alt}</p>
+                        </div>
+                    </div>
+                </motion.div>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none" aria-describedby="dialog-description">
+                <div className="sr-only" id="dialog-description">Enlarged view of {image.alt}</div>
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-black/50">
+                    <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            </DialogContent>
+        </Dialog>
+    )
+}
+

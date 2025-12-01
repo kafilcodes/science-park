@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import dynamic from "next/dynamic"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import namasteAnimation from "@/public/assets/lottie/Namaste_India.json.json";
@@ -10,12 +10,25 @@ import welcomeAnimation from "@/public/assets/lottie/Welcome.json";
 
 export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
     const [exit, setExit] = useState(false)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const namasteRef = useRef<any>(null)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const welcomeRef = useRef<any>(null)
+
+    useEffect(() => {
+        if (namasteRef.current) {
+            namasteRef.current.setSpeed(1.5)
+        }
+        if (welcomeRef.current) {
+            welcomeRef.current.setSpeed(1.5)
+        }
+    }, [])
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setExit(true)
             setTimeout(onComplete, 800) // Wait for exit animation
-        }, 4000) // Show for 4 seconds
+        }, 2500) // Show for 2.5 seconds
         return () => clearTimeout(timer)
     }, [onComplete])
 
@@ -28,10 +41,10 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
         >
             <div className="flex flex-col items-center gap-8">
                 <div className="w-64 h-64 md:w-80 md:h-80">
-                    <Lottie animationData={namasteAnimation} loop={true} className="w-full h-full" />
+                    <Lottie lottieRef={namasteRef} animationData={namasteAnimation} loop={true} className="w-full h-full" />
                 </div>
                 <div className="w-48 h-24 -mt-10">
-                    <Lottie animationData={welcomeAnimation} loop={true} className="w-full h-full" />
+                    <Lottie lottieRef={welcomeRef} animationData={welcomeAnimation} loop={true} className="w-full h-full" />
                 </div>
             </div>
         </motion.div>

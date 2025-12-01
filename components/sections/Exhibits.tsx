@@ -13,7 +13,7 @@ import chemistryAnimation from "@/public/assets/lottie/hard science.json";
 const exhibits = [
     {
         title: "Physics Playground",
-        description: "Experience the laws of motion and gravity firsthand with our interactive installations.",
+        description: "Experience the laws of motion and gravity with interactive installations.",
         animation: physicsAnimation,
         color: "from-blue-500/20 to-cyan-500/20",
     },
