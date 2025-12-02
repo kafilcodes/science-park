@@ -83,7 +83,7 @@ function GalleryItem({ image, index }: { image: typeof images[0], index: number 
                         "relative cursor-pointer overflow-hidden rounded-2xl group border border-white/10 shadow-lg break-inside-avoid mb-4 bg-white/5"
                     )}
                 >
-                    <div className="relative w-full overflow-hidden min-h-[200px]">
+                    <div className="relative w-full overflow-hidden">
                         {isLoading && (
                             <div className="absolute inset-0 bg-white/10 animate-pulse z-10" />
                         )}

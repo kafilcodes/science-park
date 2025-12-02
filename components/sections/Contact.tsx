@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import emailjs from "emailjs-com"
 import dynamic from "next/dynamic"
-
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import {
     Form,
     FormControl,
@@ -15,7 +15,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
@@ -97,164 +97,135 @@ export function Contact() {
             <div className="absolute top-20 right-0 w-64 h-64 opacity-20 pointer-events-none">
                 <Lottie animationData={airplaneAnimation} loop={true} className="w-full h-full" />
             </div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 opacity-100 pointer-events-none">
-                <Lottie animationData={contactCharacterAnimation} loop={true} className="w-full h-full" />
-            </div>
 
-            <div className="mb-12 text-center relative z-10">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                {/* Left Side - Animation & Text */}
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
+                    className="space-y-8 lg:col-span-1"
                 >
-                    Get in Touch
-                </motion.h2>
-                <p className="mt-4 text-muted-foreground md:text-xl">
-                    Have questions? We&apos;d love to hear from you.
-                </p>
-            </div>
+                    <div className="space-y-4">
+                        {/* Lottie Animation - Restored */}
+                        <div className="w-full max-w-[400px] aspect-square relative mx-auto lg:mx-0">
+                            <div className="absolute inset-0 bg-teal-100/30 rounded-full blur-3xl -z-10" />
+                            <Lottie animationData={contactCharacterAnimation} loop={true} className="w-full h-full" />
+                        </div>
 
-            <div className="grid gap-12 lg:grid-cols-2 items-start relative z-10">
-                {/* Contact Info Cards */}
-                <div className="grid gap-6">
-                    <Card className="bg-white/5 backdrop-blur-md border-white/10">
-                        <CardContent className="flex items-center gap-4 p-6">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                                <MapPin className="h-6 w-6" />
-                            </div>
-                            <div>
-                                <h3 className="font-semibold">Visit Us</h3>
-                                <p className="text-sm text-muted-foreground">Rudri Road, Dhamtari, Chhattisgarh</p>
-                            </div>
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-teal-950">
+                            <TextGenerateEffect words="Get in Touch" className="text-teal-950" />
+                        </h2>
+                        <p className="text-muted-foreground md:text-lg max-w-[500px]">
+                            Whether you&apos;re planning a school trip, a family visit, or just want to say hello, we&apos;re here to help!
+                        </p>
+                    </div>
+                </motion.div>
+
+                {/* Right Content - Form */}
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="lg:col-span-1"
+                >
+                    <Card className="border-teal-100 shadow-lg bg-white/80 backdrop-blur-sm">
+                        <CardHeader>
+                            <CardTitle className="text-2xl text-teal-900">Send us a Message</CardTitle>
+                            <CardDescription>We&apos;ll get back to you as soon as possible.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <Form {...form}>
+                                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                                    <FormField
+                                        control={form.control}
+                                        name="name"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Name</FormLabel>
+                                                <FormControl>
+                                                    <div className="relative">
+                                                        <User className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
+                                                        <Input placeholder="Your name" {...field} className="pl-10 border-teal-200 focus:border-teal-500" />
+                                                    </div>
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={form.control}
+                                        name="email"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Email</FormLabel>
+                                                <FormControl>
+                                                    <div className="relative">
+                                                        <Mail className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
+                                                        <Input placeholder="your@email.com" {...field} className="pl-10 border-teal-200 focus:border-teal-500" />
+                                                    </div>
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={form.control}
+                                        name="phone"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Phone</FormLabel>
+                                                <FormControl>
+                                                    <div className="relative">
+                                                        <Phone className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
+                                                        <Input placeholder="Your phone number" {...field} className="pl-10 border-teal-200 focus:border-teal-500" />
+                                                    </div>
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={form.control}
+                                        name="message"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Message</FormLabel>
+                                                <FormControl>
+                                                    <Textarea
+                                                        placeholder="How can we help you?"
+                                                        className="min-h-[120px] border-teal-200 focus:border-teal-500"
+                                                        {...field}
+                                                    />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <Button
+                                        type="submit"
+                                        className="w-full bg-teal-600 hover:bg-teal-700 text-white"
+                                        disabled={isSending || !form.formState.isValid}
+                                    >
+                                        {isSending ? (
+                                            <>
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Send Message
+                                                <div className="ml-2 h-6 w-6">
+                                                    <Lottie animationData={airplaneAnimation} loop={true} />
+                                                </div>
+                                            </>
+                                        )}
+                                    </Button>
+                                </form>
+                            </Form>
                         </CardContent>
                     </Card>
-
-                    <a href="mailto:info@scienceparkdhamtari.com" className="block transition-transform hover:scale-[1.02]">
-                        <Card className="bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 transition-colors cursor-pointer">
-                            <CardContent className="flex items-center gap-4 p-6">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                                    <Mail className="h-6 w-6" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold">Email Us</h3>
-                                    <p className="text-sm text-muted-foreground">info@scienceparkdhamtari.com</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </a>
-
-                    <a href="tel:+919876543210" className="block transition-transform hover:scale-[1.02]">
-                        <Card className="bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 transition-colors cursor-pointer">
-                            <CardContent className="flex items-center gap-4 p-6">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                                    <Phone className="h-6 w-6" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold">Call Us</h3>
-                                    <p className="text-sm text-muted-foreground">+91 98765 43210</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </a>
-                </div>
-
-                {/* Contact Form */}
-                <Card className="bg-white/5 backdrop-blur-md border-white/10">
-                    <CardHeader>
-                        <CardTitle>Send us a Message</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                                <FormField
-                                    control={form.control}
-                                    name="name"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Name</FormLabel>
-                                            <FormControl>
-                                                <div className="relative">
-                                                    <User className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
-                                                    <Input placeholder="Your name" {...field} className="pl-10 bg-white/5 border-white/10" />
-                                                </div>
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="email"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Email</FormLabel>
-                                            <FormControl>
-                                                <div className="relative">
-                                                    <Mail className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
-                                                    <Input placeholder="your@email.com" {...field} className="pl-10 bg-white/5 border-white/10" />
-                                                </div>
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="phone"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Phone</FormLabel>
-                                            <FormControl>
-                                                <div className="relative">
-                                                    <Phone className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
-                                                    <Input placeholder="Your phone number" {...field} className="pl-10 bg-white/5 border-white/10" />
-                                                </div>
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="message"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Message</FormLabel>
-                                            <FormControl>
-                                                <Textarea
-                                                    placeholder="How can we help you?"
-                                                    className="min-h-[120px] bg-white/5 border-white/10"
-                                                    {...field}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <Button
-                                    type="submit"
-                                    className="w-full bg-teal-500 hover:bg-teal-600 text-white"
-                                    disabled={isSending || !form.formState.isValid}
-                                >
-                                    {isSending ? (
-                                        <>
-                                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                            Sending...
-                                        </>
-                                    ) : (
-                                        <>
-                                            Send Message
-                                            <div className="ml-2 h-6 w-6">
-                                                <Lottie animationData={airplaneAnimation} loop={true} />
-                                            </div>
-                                        </>
-                                    )}
-                                </Button>
-                            </form>
-                        </Form>
-                    </CardContent>
-                </Card>
+                </motion.div>
             </div>
         </section>
     )

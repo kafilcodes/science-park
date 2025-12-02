@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Map, Building2, IndianRupee, FlaskConical } from "lucide-react"
 import dynamic from "next/dynamic"
 import { useState, useEffect, useRef } from "react"
 
@@ -34,10 +35,10 @@ const features = [
 ]
 
 const stats = [
-    { label: "Total Area", value: "10 Acres" },
-    { label: "Buildup Area", value: "50,000 sq ft" },
-    { label: "Capital Cost", value: "₹ 15 Cr" },
-    { label: "Exhibits", value: "50+" },
+    { label: "Total Area", value: "10 Acres", icon: Map },
+    { label: "Buildup Area", value: "50,000 sq ft", icon: Building2 },
+    { label: "Capital Cost", value: "₹ 15 Cr", icon: IndianRupee },
+    { label: "Exhibits", value: "50+", icon: FlaskConical },
 ]
 
 export function About() {
@@ -100,20 +101,23 @@ export function About() {
                     <Lottie animationData={mapAnimation} loop={true} className="w-full h-full drop-shadow-xl" />
                 </motion.div>
 
-                <div className="grid grid-cols-2 gap-8 relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 relative z-10">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="flex flex-col gap-2"
+                            className="group relative overflow-hidden rounded-2xl border border-teal-500/20 bg-white p-4 sm:p-5 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center"
                         >
-                            <h3 className="text-4xl md:text-5xl font-bold">
+                            <div className="mb-3 p-2.5 rounded-full bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300">
+                                <stat.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                            </div>
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1">
                                 <Counter value={stat.value} color={index % 2 === 0 ? "text-primary" : "text-accent"} />
                             </h3>
-                            <p className="text-muted-foreground font-medium">{stat.label}</p>
+                            <p className="text-muted-foreground font-medium text-xs sm:text-sm">{stat.label}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -132,7 +136,7 @@ function Counter({ value, color }: { value: string, color: string }) {
         <span className={`flex items-baseline gap-1 ${color}`}>
             {prefix}
             <CountUpAnimation end={number} />
-            <span className="text-xl md:text-3xl text-foreground/80">{suffix}</span>
+            <span className="text-lg md:text-2xl text-foreground/80">{suffix}</span>
         </span>
     )
 }
@@ -140,7 +144,7 @@ function Counter({ value, color }: { value: string, color: string }) {
 function CountUpAnimation({ end }: { end: number }) {
     const [count, setCount] = useState(0)
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-50px" })
+    const isInView = useInView(ref, { once: true, margin: "-10px" })
 
     useEffect(() => {
         if (!isInView) return

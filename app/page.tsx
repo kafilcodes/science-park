@@ -7,6 +7,7 @@ import { Exhibits } from "@/components/sections/Exhibits";
 import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
 import { HowToReach } from "@/components/sections/HowToReach";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
 
 export default function Home() {
@@ -15,10 +16,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      <Hero />
+      <Hero isLoading={isLoading} />
       <div id="about" className="w-full"><About /></div>
       <div id="exhibits" className="w-full"><Exhibits /></div>
       <div id="gallery" className="w-full"><Gallery /></div>
+      <div id="testimonials" className="w-full"><Testimonials /></div>
       <div id="how-to-reach" className="w-full"><HowToReach /></div>
       <div id="contact" className="w-full"><Contact /></div>
     </main>

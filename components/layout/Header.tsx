@@ -1,19 +1,22 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { useState, useEffect } from "react"
 import { Menu, X, Home, Info, FlaskConical, Image as ImageIcon, Map as MapIcon, Phone, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { motion, AnimatePresence } from "framer-motion"
 import { Marquee } from "@/components/ui/Marquee"
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import {
     Sheet,
     SheetContent,
     SheetTrigger,
     SheetTitle,
 } from "@/components/ui/sheet"
+import { MessageSquareQuote } from "lucide-react";
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -29,60 +32,69 @@ export function Header() {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
             {/* Marquee Section */}
-            <div className="w-full bg-teal-500/80 text-white border-b border-white/10">
-                <Marquee text="Welcome to Science Park Dhamtari! Explore the wonders of science and nature. | Opening Hours: 10:00 AM - 6:00 PM | Special Exhibits on Weekends!" speed={3} className="py-2 font-medium text-sm  tracking-wide" />
+            <div className="w-full bg-teal-600 text-white border-b border-white/10">
+                <Marquee text="Welcome to Science Park Dhamtari! Explore the wonders of science and nature. | Ticket Price: ₹10 per person | Opening Hours: 10:00 AM - 6:00 PM | Special Exhibits on Weekends!" speed={3} className="py-2 font-medium text-sm tracking-wide" />
             </div>
 
             {/* Main Navbar */}
             <div className="w-full px-4 pt-4 flex justify-center">
                 <div
                     className={cn(
-                        "w-full max-w-7xl rounded-full border border-white/20 backdrop-blur-md shadow-lg transition-all duration-300 px-6 py-2 flex items-center justify-between",
-                        isScrolled ? "bg-teal-500/90 shadow-xl border-white/30" : "bg-teal-500/90 "
+                        "w-full max-w-7xl rounded-full border border-white/20 backdrop-blur-md shadow-sm transition-all duration-300 px-6 py-1.5 flex items-center justify-between",
+                        isScrolled ? "bg-white/90 shadow-md border-teal-100" : "bg-white/80"
                     )}
                 >
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/50 group-hover:border-white transition-colors bg-white/20 p-1">
-                            <img src="/logo.png" alt="Logo" className="h-full w-full object-contain" />
-                        </div>
-                        <div className="flex flex-col leading-none justify-center">
-                            <span className="text-m font-bold text-white tracking-tight drop-shadow-sm">Science</span>
-                            <span className="text-sm font-semibold text-teal-50 tracking-wide -mt-0.5">Park</span>
-                            <span className="text-[10px] text-teal-100 uppercase tracking-widest -mt-0.5">Dhamtari</span>
-                        </div>
-                    </Link>
+                    <div className="flex items-center justify-between h-16">
+                        {/* Logo */}
+                        <Link href="/" className="flex items-center gap-2 z-50">
+                            <div className="relative h-10 w-10">
+                                <Image src="/logo.png" alt="Science Park Logo" fill className="object-contain" />
+                            </div>
+                            <span className="font-bold text-xl text-teal-900 block">Science Park</span>
+                        </Link>
+                    </div>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
-                        <Link href="#about" className="flex items-center gap-2 transition-colors hover:text-teal-100 hover:scale-105">
+                    <nav className="hidden md:flex items-center gap-8">
+                        <Link href="#about" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
                             <Info className="h-4 w-4" /> About
                         </Link>
-                        <Link href="#exhibits" className="flex items-center gap-2 transition-colors hover:text-teal-100 hover:scale-105">
+                        <Link href="#exhibits" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
                             <FlaskConical className="h-4 w-4" /> Exhibits
                         </Link>
-                        <Link href="#gallery" className="flex items-center gap-2 transition-colors hover:text-teal-100 hover:scale-105">
+                        <Link href="#gallery" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
                             <ImageIcon className="h-4 w-4" /> Gallery
                         </Link>
-                        <Link href="#how-to-reach" className="flex items-center gap-2 transition-colors hover:text-teal-100 hover:scale-105">
+                        <Link href="#testimonials" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
+                            <MessageSquareQuote className="h-4 w-4" /> Testimonials
+                        </Link>
+                        <Link href="#how-to-reach" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
                             <MapIcon className="h-4 w-4" /> How to Reach
                         </Link>
-                        <Link href="#contact" className="flex items-center gap-2 transition-colors hover:text-teal-100 hover:scale-105">
+                        <Link href="#contact" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
                             <Phone className="h-4 w-4" /> Contact
                         </Link>
                     </nav>
 
                     <div className="hidden md:flex items-center gap-4">
-                        <Button asChild variant="default" size="sm" className="rounded-full px-6 bg-white text-teal-600 hover:bg-teal-50 shadow-lg transition-all hover:scale-105 border-none font-semibold">
-                            <Link href="#contact" className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4" /> Plan Visit
-                            </Link>
-                        </Button>
+                        <Link href="#contact">
+                            <HoverBorderGradient
+                                containerClassName="rounded-full"
+                                as="button"
+                                className="bg-teal-600 text-white flex items-center space-x-2 px-6 py-2 hover:scale-105 active:scale-95 transition-transform duration-200"
+                            >
+                                <span className="text-center font-medium">
+                                    Plan Visit
+                                </span>
+                                <Calendar className="h-4 w-4 ml-2" />
+                            </HoverBorderGradient>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu */}
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="md:hidden rounded-full text-white hover:bg-white/10 hover:text-teal-400">
+                            <Button variant="ghost" size="icon" className="md:hidden rounded-full text-teal-900 hover:bg-teal-50 hover:text-teal-600">
                                 <Menu className="h-6 w-6" />
                                 <span className="sr-only">Toggle menu</span>
                             </Button>
@@ -98,6 +110,9 @@ export function Header() {
                                 </Link>
                                 <Link href="#gallery" className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
                                     <ImageIcon className="h-6 w-6" /> Gallery
+                                </Link>
+                                <Link href="#testimonials" className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
+                                    <MessageSquareQuote className="h-6 w-6" /> Testimonials
                                 </Link>
                                 <Link href="#how-to-reach" className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
                                     <MapIcon className="h-6 w-6" /> How to Reach
