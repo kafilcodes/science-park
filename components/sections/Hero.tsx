@@ -67,12 +67,22 @@ export function Hero({ isLoading = false }: { isLoading?: boolean }) {
                         </div>
 
                         <div className="space-y-1 sm:space-y-4">
-                            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[6rem] font-bold tracking-tighter text-teal-600 leading-tight">
-                                <TextGenerateEffect words="Discover the Wonders of" className="text-teal-600" start={!isLoading} />
-                            </h1>
-                            <div className="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[6rem] font-bold tracking-tighter text-teal-600 leading-tight">
-                                <TextGenerateEffect words="Science & Nature" className="text-teal-600" start={!isLoading} />
-                            </div>
+                            <motion.h1
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-teal-600 leading-tight"
+                            >
+                                Discover the Wonders of
+                            </motion.h1>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.5 }}
+                                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-teal-600 leading-tight"
+                            >
+                                Science & Nature
+                            </motion.div>
                         </div>
 
                         <p className="max-w-[800px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed lg:text-2xl/relaxed">

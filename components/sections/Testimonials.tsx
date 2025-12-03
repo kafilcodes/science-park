@@ -2,6 +2,10 @@
 
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import dynamic from "next/dynamic";
+import solarSystemAnimation from "@/public/assets/lottie/solar system.json";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const testimonials = [
     {
@@ -43,22 +47,27 @@ const testimonials = [
 
 export function Testimonials() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden" id="testimonials">
-            <div className="container px-4 md:px-6 mb-12 text-center">
+        <section className="pt-8 pb-0 bg-white relative overflow-hidden" id="testimonials">
+            <div className="container px-4 md:px-6 mb-8 text-center">
                 <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-teal-950 mb-4">
                     <TextGenerateEffect words="What Our Visitors Say" className="text-teal-950 text-center justify-center" />
                 </h2>
-                <p className="text-muted-foreground md:text-xl max-w-[800px] mx-auto">
+                <p className="text-muted-foreground md:text-xl max-w-[800px] mx-auto mt-16">
                     Hear from the people who have experienced the magic of science and nature at our park.
                 </p>
             </div>
 
-            <div className="h-[25rem] rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
+            <div className="h-[20rem] mt-16 rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
                 <InfiniteMovingCards
                     items={testimonials}
                     direction="right"
                     speed="slow"
                 />
+            </div>
+
+            {/* Solar System Animation */}
+            <div className="w-full max-w-md mx-auto -mt-20 relative z-10">
+                <Lottie animationData={solarSystemAnimation} loop={true} className="w-auto h-150 rotate-90" />
             </div>
         </section>
     );

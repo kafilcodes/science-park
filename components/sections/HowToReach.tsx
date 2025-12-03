@@ -8,6 +8,7 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import airplaneAnimation from "@/public/assets/lottie/Airplane Lottie Animation.json";
 import carAnimation from "@/public/assets/lottie/Car driving on road.json";
 import navigationAnimation from "@/public/assets/lottie/Service Area.json";
+import { TextGenerateEffect } from "../ui/text-generate-effect";
 
 // Fallback if specific files don't exist, I'll use what I saw in the list
 // "Man looking through binoculars.json" -> Navigation
@@ -45,21 +46,16 @@ const travelOptions = [
 
 export function HowToReach() {
     return (
-        <section className="container py-24 relative overflow-hidden">
+        <section className="container py-2 relative overflow-hidden">
             <div className="absolute top-0 right-0 -z-10 opacity-10 w-96 h-96">
                 <Lottie animationData={airplaneAnimation} loop={true} />
             </div>
 
             <div className="text-center mb-16">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
-                >
-                    How to Reach Us
-                </motion.h2>
-                <p className="mt-4 text-muted-foreground md:text-xl max-w-2xl mx-auto">
+                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-teal-950 mb-4">
+                                    <TextGenerateEffect words="How to Reach" className="text-teal-950 text-center justify-center" />
+                                </h2>
+                <p className="mt-0 text-muted-foreground md:text-xl max-w-2xl mx-auto">
                     We are located near the beautiful Gangrel Dam, easily accessible by road.
                 </p>
             </div>
