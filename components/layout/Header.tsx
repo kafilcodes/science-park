@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, X, Home, Info, FlaskConical, Image as ImageIcon, Map as MapIcon, Phone, Calendar } from "lucide-react"
+import { Menu, X, Home, Info, FlaskConical, Image as ImageIcon, Map as MapIcon, Phone, Calendar, Newspaper, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -59,23 +59,29 @@ export function Header() {
                     {/* Desktop Navigation */}
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-3 xl:gap-8">
-                        <Link href="#about" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
-                            <Info className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> About
+                        <Link href="#about" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="About">
+                            <Info className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">About</span>
                         </Link>
-                        <Link href="#exhibits" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
-                            <FlaskConical className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Exhibits
+                        <Link href="#exhibits" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="Exhibits">
+                            <FlaskConical className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">Exhibits</span>
                         </Link>
-                        <Link href="#gallery" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
-                            <ImageIcon className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Gallery
+                        <Link href="#gallery" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="Gallery">
+                            <ImageIcon className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">Gallery</span>
                         </Link>
-                        <Link href="#testimonials" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
-                            <MessageSquareQuote className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Testimonials
+                        <Link href="#news" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="News">
+                            <Newspaper className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">News</span>
                         </Link>
-                        <Link href="#how-to-reach" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
-                            <MapIcon className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> How to Reach
+                        <Link href="#feed" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="Social Feed">
+                            <Instagram className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">Social</span>
                         </Link>
-                        <Link href="#contact" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
-                            <Phone className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Contact
+                        <Link href="#testimonials" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="Testimonials">
+                            <MessageSquareQuote className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">Testimonials</span>
+                        </Link>
+                        <Link href="#how-to-reach" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="How to Reach">
+                            <MapIcon className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">Reach</span>
+                        </Link>
+                        <Link href="#contact" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap" title="Contact">
+                            <Phone className="h-4 w-4 xl:h-4 xl:w-4" /> <span className="hidden xl:inline">Contact</span>
                         </Link>
                     </nav>
 
@@ -113,6 +119,12 @@ export function Header() {
                                 </Link>
                                 <Link href="#gallery" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
                                     <ImageIcon className="h-6 w-6" /> Gallery
+                                </Link>
+                                <Link href="#news" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
+                                    <Newspaper className="h-6 w-6" /> News
+                                </Link>
+                                <Link href="#feed" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
+                                    <Instagram className="h-6 w-6" /> Social
                                 </Link>
                                 <Link href="#testimonials" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
                                     <MessageSquareQuote className="h-6 w-6" /> Testimonials

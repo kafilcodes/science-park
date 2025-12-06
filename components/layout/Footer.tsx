@@ -24,21 +24,12 @@ export function Footer() {
                 <div className="flex flex-col gap-4 items-center md:items-start">
                     <h3 className="font-bold text-lg text-teal-900">Quick Links</h3>
                     <nav className="flex flex-col gap-3 text-sm text-muted-foreground items-center md:items-start">
-                        <Link href="#about" className="hover:text-teal-600 transition-colors flex items-center gap-2">
-                            About Us
-                        </Link>
-                        <Link href="#exhibits" className="hover:text-teal-600 transition-colors flex items-center gap-2">
-                            Exhibits
-                        </Link>
-                        <Link href="#gallery" className="hover:text-teal-600 transition-colors flex items-center gap-2">
-                            Gallery
-                        </Link>
-                        <Link href="#testimonials" className="hover:text-teal-600 transition-colors flex items-center gap-2">
-                            Testimonials
-                        </Link>
-                        <Link href="#how-to-reach" className="hover:text-teal-600 transition-colors flex items-center gap-2">
-                            How to Reach
-                        </Link>
+                        <Link href="#about" className="hover:text-teal-600 transition-colors flex items-center gap-2">About Us</Link>
+                        <Link href="#exhibits" className="hover:text-teal-600 transition-colors flex items-center gap-2">Exhibits</Link>
+                        <Link href="#gallery" className="hover:text-teal-600 transition-colors flex items-center gap-2">Gallery</Link>
+                        <Link href="#news" className="hover:text-teal-600 transition-colors flex items-center gap-2">News & Updates</Link>
+                        <Link href="#feed" className="hover:text-teal-600 transition-colors flex items-center gap-2">Social Feed</Link>
+                        <Link href="#contact" className="hover:text-teal-600 transition-colors flex items-center gap-2">Contact</Link>
                     </nav>
                 </div>
 
@@ -89,6 +80,6 @@ export function Footer() {
                 </div>
             </div>
 
-        </footer>
+        </footer >
     )
 }

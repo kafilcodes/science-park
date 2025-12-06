@@ -31,6 +31,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://scienceparkdhamtari.com/#news</loc>
+    <lastmod>2025-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scienceparkdhamtari.com/#feed</loc>
+    <lastmod>2025-11-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://scienceparkdhamtari.com/#how-to-reach</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>yearly</changefreq>
