@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Twitter, Instagram, Linkedin, MapPin, Mail, Phone, Info, FlaskConical, Image as ImageIcon, MessageSquareQuote, Youtube } from "lucide-react"
 import { siteConfig } from "@/config/site"
-import { ScrollToTop } from "@/components/ui/scroll-to-top"
 
 export function Footer() {
     return (
@@ -66,16 +65,16 @@ export function Footer() {
                 <div className="space-y-4 flex flex-col items-center md:items-start">
                     <h3 className="font-bold text-lg text-teal-900">Follow Us</h3>
                     <div className="flex gap-3">
-                        <Link href={siteConfig.links.facebook} target="_blank" rel="noopener noreferrer" className="p-2 bg-teal-50 rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
+                        <Link href={siteConfig.links.facebook} target="_blank" rel="noopener noreferrer" className="p-2 bg-transparent rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
                             <Facebook className="h-4 w-4" />
                         </Link>
-                        <Link href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer" className="p-2 bg-teal-50 rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
+                        <Link href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer" className="p-2 bg-transparent rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
                             <Twitter className="h-4 w-4" />
                         </Link>
-                        <Link href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer" className="p-2 bg-teal-50 rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
+                        <Link href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer" className="p-2 bg-transparent rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
                             <Instagram className="h-4 w-4" />
                         </Link>
-                        <Link href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-teal-50 rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
+                        <Link href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-transparent rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition-colors">
                             <Linkedin className="h-4 w-4" />
                         </Link>
                     </div>
@@ -90,8 +89,6 @@ export function Footer() {
                 </div>
             </div>
 
-            {/* Scroll to Top Button */}
-            <ScrollToTop />
         </footer>
     )
 }

@@ -8,6 +8,8 @@ import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
 import { HowToReach } from "@/components/sections/HowToReach";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { News } from "@/components/sections/News";
+import { InstagramFeed } from "@/components/sections/InstagramFeed";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
 
 export default function Home() {
@@ -21,6 +23,8 @@ export default function Home() {
       <div id="exhibits" className="w-full"><Exhibits /></div>
       <div id="gallery" className="w-full"><Gallery /></div>
       <div id="testimonials" className="w-full"><Testimonials /></div>
+      <div id="news" className="w-full"><News /></div>
+      <div id="feed" className="w-full"><InstagramFeed /></div>
       <div id="how-to-reach" className="w-full"><HowToReach /></div>
       <div id="contact" className="w-full"><Contact /></div>
     </main>

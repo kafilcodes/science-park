@@ -57,38 +57,39 @@ export function Header() {
 
                     {/* Desktop Navigation */}
                     {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
-                        <Link href="#about" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
-                            <Info className="h-4 w-4 hidden xl:block" /> About
+                    {/* Desktop Navigation */}
+                    <nav className="hidden lg:flex items-center gap-3 xl:gap-8">
+                        <Link href="#about" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
+                            <Info className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> About
                         </Link>
-                        <Link href="#exhibits" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
-                            <FlaskConical className="h-4 w-4 hidden xl:block" /> Exhibits
+                        <Link href="#exhibits" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
+                            <FlaskConical className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Exhibits
                         </Link>
-                        <Link href="#gallery" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
-                            <ImageIcon className="h-4 w-4 hidden xl:block" /> Gallery
+                        <Link href="#gallery" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
+                            <ImageIcon className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Gallery
                         </Link>
-                        <Link href="#testimonials" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
-                            <MessageSquareQuote className="h-4 w-4 hidden xl:block" /> Testimonials
+                        <Link href="#testimonials" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
+                            <MessageSquareQuote className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Testimonials
                         </Link>
-                        <Link href="#how-to-reach" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
-                            <MapIcon className="h-4 w-4 hidden xl:block" /> How to Reach
+                        <Link href="#how-to-reach" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
+                            <MapIcon className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> How to Reach
                         </Link>
-                        <Link href="#contact" className="flex items-center gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium">
-                            <Phone className="h-4 w-4 hidden xl:block" /> Contact
+                        <Link href="#contact" className="flex items-center gap-1.5 xl:gap-2 transition-colors text-teal-900 hover:text-teal-600 hover:scale-105 font-medium text-sm xl:text-base whitespace-nowrap">
+                            <Phone className="h-3.5 w-3.5 xl:h-4 xl:w-4" /> Contact
                         </Link>
                     </nav>
 
-                    <div className="hidden lg:flex items-center gap-4">
+                    <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
                         <Link href="#contact">
                             <HoverBorderGradient
                                 containerClassName="rounded-full"
                                 as="button"
-                                className="bg-teal-600 text-white flex items-center space-x-2 px-4 py-2 xl:px-6 hover:scale-105 active:scale-95 transition-transform duration-200"
+                                className="bg-teal-600 text-white flex items-center space-x-2 px-4 py-2 xl:px-6 hover:scale-105 active:scale-95 transition-transform duration-200 whitespace-nowrap"
                             >
-                                <span className="text-center font-medium">
+                                <span className="text-center font-medium text-sm xl:text-base">
                                     Plan Visit
                                 </span>
-                                <Calendar className="h-4 w-4 ml-2 hidden xl:block" />
+                                <Calendar className="h-3.5 w-3.5 xl:h-4 xl:w-4 ml-2" />
                             </HoverBorderGradient>
                         </Link>
                     </div>

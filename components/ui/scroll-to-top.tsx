@@ -52,9 +52,9 @@ export function ScrollToTop() {
                                     variant="outline"
                                     size="icon"
                                     onClick={scrollToTop}
-                                    className="rounded-full bg-white/10 backdrop-blur-md border-white/20 text-teal-500 hover:bg-teal-500 hover:text-white shadow-lg h-12 w-12 transition-all duration-300"
+                                    className="rounded-full bg-red/10 backdrop-blur-md border-red/20 text-red-500 hover:bg-red-500 hover:text-white shadow-lg h-10 w-10 md:h-12 md:w-12 transition-all duration-300"
                                 >
-                                    <ArrowUp className="h-6 w-6" />
+                                    <ArrowUp className="h-5 w-5 md:h-6 md:w-6" />
                                     <span className="sr-only">Scroll to top</span>
                                 </Button>
                             </motion.div>

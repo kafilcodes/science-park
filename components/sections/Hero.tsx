@@ -63,7 +63,7 @@ export function Hero({ isLoading = false }: { isLoading?: boolean }) {
                     >
                         <div className="inline-flex items-center rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-sm font-medium text-teal-800 backdrop-blur-sm">
                             <span className="flex h-2 w-2 rounded-full bg-teal-500 mr-2 animate-pulse"></span>
-                            Welcome to Science Park Dhamtari
+                            👋 Welcome to Science Park Dhamtari 
                         </div>
 
                         <div className="space-y-1 sm:space-y-4">
@@ -73,7 +73,7 @@ export function Hero({ isLoading = false }: { isLoading?: boolean }) {
                                 transition={{ duration: 0.5, delay: 0.3 }}
                                 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-teal-600 leading-tight"
                             >
-                                Discover the Wonders of
+                                Discover the Wonders
                             </motion.h1>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export function Hero({ isLoading = false }: { isLoading?: boolean }) {
                                 transition={{ duration: 0.5, delay: 0.5 }}
                                 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-teal-600 leading-tight"
                             >
-                                Science & Nature
+                                of Science & Nature
                             </motion.div>
                         </div>
 
@@ -94,20 +94,20 @@ export function Hero({ isLoading = false }: { isLoading?: boolean }) {
                                 <HoverBorderGradient
                                     containerClassName="rounded-full w-full sm:w-auto"
                                     as="button"
-                                    className="bg-teal-600 text-white flex items-center justify-center space-x-2 px-6 py-3 sm:px-8 sm:py-4 w-full sm:w-auto text-base sm:text-lg transition-all duration-200 hover:bg-teal-700 hover:scale-[1.02] active:scale-[0.98]"
+                                    className="bg-teal-600 text-white flex items-center justify-center space-x-2 px-5 py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 w-full sm:w-auto text-sm lg:text-base xl:text-lg transition-all duration-200 hover:bg-teal-700 hover:scale-[1.02] active:scale-[0.98]"
                                 >
                                     <span>Explore Exhibits</span>
-                                    <ArrowRight className="ml-2 h-5 w-5" />
+                                    <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
                                 </HoverBorderGradient>
                             </Link>
                             <Link href="#contact" className="w-full sm:w-auto">
                                 <HoverBorderGradient
                                     containerClassName="rounded-full w-full sm:w-auto"
                                     as="button"
-                                    className="bg-white text-teal-600 border border-teal-100 flex items-center justify-center space-x-2 px-6 py-3 sm:px-8 sm:py-4 w-full sm:w-auto text-base sm:text-lg transition-all duration-200 hover:bg-teal-50 hover:scale-[1.02] active:scale-[0.98]"
+                                    className="bg-white text-teal-600 border border-teal-100 flex items-center justify-center space-x-2 px-5 py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 w-full sm:w-auto text-sm lg:text-base xl:text-lg transition-all duration-200 hover:bg-teal-50 hover:scale-[1.02] active:scale-[0.98]"
                                 >
                                     <span>Plan Your Visit</span>
-                                    <Calendar className="ml-2 h-5 w-5" />
+                                    <Calendar className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
                                 </HoverBorderGradient>
                             </Link>
                         </div>

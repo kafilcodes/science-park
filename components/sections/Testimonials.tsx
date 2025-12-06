@@ -57,7 +57,7 @@ export function Testimonials() {
                 </p>
             </div>
 
-            <div className="h-[20rem] mt-16 rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
+            <div className="h-[20rem] mt-8 rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
                 <InfiniteMovingCards
                     items={testimonials}
                     direction="right"
@@ -66,8 +66,8 @@ export function Testimonials() {
             </div>
 
             {/* Solar System Animation */}
-            <div className="w-full max-w-md mx-auto -mt-20 relative z-10">
-                <Lottie animationData={solarSystemAnimation} loop={true} className="w-auto h-150 rotate-90" />
+            <div className="w-full max-w-md mx-auto -mt-40 -mb-28 relative z-10">
+                <Lottie animationData={solarSystemAnimation} loop={true} className="w-auto h-[35rem] rotate-90" />
             </div>
         </section>
     );
