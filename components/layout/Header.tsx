@@ -110,33 +110,33 @@ export function Header() {
                         </SheetTrigger>
                         <SheetContent side="top" className="h-screen w-full border-none bg-teal-950/95 backdrop-blur-xl flex flex-col items-center justify-center text-white">
                             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                            <div className="flex flex-col gap-8 items-center text-center">
-                                <Link href="#about" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <Info className="h-6 w-6" /> About
+                            <div className="flex flex-col gap-6 items-start w-fit mx-auto">
+                                <Link href="#about" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <Info className="h-6 w-6 shrink-0" /> About
                                 </Link>
-                                <Link href="#exhibits" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <FlaskConical className="h-6 w-6" /> Exhibits
+                                <Link href="#exhibits" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <FlaskConical className="h-6 w-6 shrink-0" /> Exhibits
                                 </Link>
-                                <Link href="#gallery" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <ImageIcon className="h-6 w-6" /> Gallery
+                                <Link href="#gallery" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <ImageIcon className="h-6 w-6 shrink-0" /> Gallery
                                 </Link>
-                                <Link href="#news" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <Newspaper className="h-6 w-6" /> News
+                                <Link href="#news" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <Newspaper className="h-6 w-6 shrink-0" /> News
                                 </Link>
-                                <Link href="#feed" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <Instagram className="h-6 w-6" /> Social
+                                <Link href="#feed" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <Instagram className="h-6 w-6 shrink-0" /> Social
                                 </Link>
-                                <Link href="#testimonials" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <MessageSquareQuote className="h-6 w-6" /> Testimonials
+                                <Link href="#testimonials" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <MessageSquareQuote className="h-6 w-6 shrink-0" /> Testimonials
                                 </Link>
-                                <Link href="#how-to-reach" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <MapIcon className="h-6 w-6" /> How to Reach
+                                <Link href="#how-to-reach" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <MapIcon className="h-6 w-6 shrink-0" /> How to Reach
                                 </Link>
-                                <Link href="#contact" onClick={() => setIsOpen(false)} className="flex items-center gap-3 text-2xl font-medium hover:text-teal-400 transition-colors">
-                                    <Phone className="h-6 w-6" /> Contact
+                                <Link href="#contact" onClick={() => setIsOpen(false)} className="flex items-center justify-start gap-4 text-2xl font-medium hover:text-teal-400 transition-colors w-full">
+                                    <Phone className="h-6 w-6 shrink-0" /> Contact
                                 </Link>
-                                <Button asChild size="lg" className="mt-8 rounded-full px-8 text-lg bg-teal-500  text-white border-none">
-                                    <Link href="#contact" onClick={() => setIsOpen(false)}>
+                                <Button asChild size="lg" className="mt-8 rounded-full px-8 text-lg bg-teal-500  text-white border-none w-full">
+                                    <Link href="#contact" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2">
                                         <Calendar className="mr-2 h-5 w-5" /> Plan Visit
                                     </Link>
                                 </Button>

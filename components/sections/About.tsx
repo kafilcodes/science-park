@@ -35,10 +35,10 @@ const features = [
 ]
 
 const stats = [
-    { label: "Total Area", value: "10 Acres", icon: Map },
-    { label: "Buildup Area", value: "50,000 sq ft", icon: Building2 },
-    { label: "Capital Cost", value: "₹ 15 Cr", icon: IndianRupee },
-    { label: "Exhibits", value: "50+", icon: FlaskConical },
+    { label: "Total Area", value: "1 Acres", icon: Map },
+    { label: "Buildup Area", value: "5000 sq ft", icon: Building2 },
+    { label: "Capital Cost", value: "₹ 1 Cr", icon: IndianRupee },
+    { label: "Exhibits", value: "65+", icon: FlaskConical },
 ]
 
 export function About() {

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import dynamic from "next/dynamic"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import airplaneAnimation from "@/public/assets/lottie/Airplane Lottie Animation.json";
@@ -53,8 +54,8 @@ export function HowToReach() {
 
             <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-teal-950 mb-4">
-                                    <TextGenerateEffect words="How to Reach" className="text-teal-950 text-center justify-center" />
-                                </h2>
+                    <TextGenerateEffect words="How to Reach" className="text-teal-950 text-center justify-center" />
+                </h2>
                 <p className="mt-0 text-muted-foreground md:text-xl max-w-2xl mx-auto">
                     We are located near the beautiful Gangrel Dam, easily accessible by road.
                 </p>
@@ -92,7 +93,7 @@ export function HowToReach() {
                 className="mt-16 rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-[400px] relative"
             >
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.601955638662!2d81.5475!3d20.6425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDM4JzMzLjAiTiA4McKwMzInNTEuMCJF!5e0!3m2!1sen!2sin!4v1635765432109!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14902.164893706037!2d81.54752538805063!3d20.61785316467285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDM3JzA0LjMiTiA4McKwMzMnMzcuNSJF!5e1!3m2!1sen!2sin!4v1733560000000!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -101,6 +102,17 @@ export function HowToReach() {
                     className="grayscale hover:grayscale-0 transition-all duration-500"
                 ></iframe>
             </motion.div>
+
+            {process.env.NEXT_PUBLIC_GOOGLE_MAPS_LINK && (
+                <div className="flex justify-center mt-8">
+                    <Button asChild variant="outline" className="border-teal-200 text-teal-800 hover:bg-teal-50 hover:text-teal-900 gap-2">
+                        <a href={process.env.NEXT_PUBLIC_GOOGLE_MAPS_LINK} target="_blank" rel="noopener noreferrer">
+                            Open in Google Maps
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                        </a>
+                    </Button>
+                </div>
+            )}
         </section>
     )
 }
