@@ -1,104 +1,117 @@
-# 🧪 Science Park Dhamtari | Official Government Portal
+<div align="center">
 
-[![Live Website](https://img.shields.io/badge/Live-Website-teal?style=for-the-badge&logo=google-chrome&logoColor=white)](https://scienceparkdhamtari.com/)
-[![Built With Next.js](https://img.shields.io/badge/Built%20With-Next.js-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://scienceparkdhamtari.com/)
-[![Government Project](https://img.shields.io/badge/Project-Government%20Initiative-orange?style=for-the-badge&logo=india)](https://dhamtari.gov.in/)
+  <img src="https://scienceparkdhamtari.com/logo.png" alt="Science Park Dhamtari Logo" width="120" height="120" />
 
-> **Experience the wonders of science and nature at Chhattisgarh's premier educational destination.**
+  # 🧪 Science Park Dhamtari
+  ### The Official Educational Tourism Portal
+  
+  [![Live Website](https://img.shields.io/badge/Live-Website-teal?style=for-the-badge&logo=google-chrome&logoColor=white)](https://scienceparkdhamtari.com/)
+  [![Government Project](https://img.shields.io/badge/Official-Govt._Project-orange?style=for-the-badge&logo=india&logoColor=white)](https://dhamtari.gov.in/)
+  [![Built With Next.js](https://img.shields.io/badge/Built%20With-Next.js-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+  
+  <p align="center">
+    <b>Explore • Learn • Innovate</b><br/>
+    <i>A flagship initiative by the District Administration of Dhamtari, Chhattisgarh.</i>
+  </p>
 
----
-
-## 🌟 Overview
-
-Welcome to the **Official Repository of Science Park Dhamtari**, a flagship initiative by the district administration to foster scientific temper and curiosity among students and the general public. Located near the scenic Gangrel Dam, this park blends interactive learning with the beauty of nature.
-
-This repository hosts the source code for the official website, designed to provide visitors with information about exhibits, timings, gallery highlights, and upcoming events.
-
-🔗 **Official Website:** [https://scienceparkdhamtari.com/](https://scienceparkdhamtari.com/)
-
----
-
-## 🚀 Key Features
-
-*   **⚡ Interactive & Responsive Design**: Built with Next.js 16 and Tailwind CSS for a seamless experience across all devices (Desktop, Tablet, Mobile).
-*   **📰 Live News & Updates**: Real-time updates about inaugurations, events, and media coverage with optimized bento-grid layouts.
-*   **📸 Dynamic Gallery**: Immersive photo gallery showcasing indoor and outdoor exhibits, inaugurated by dignitaries.
-*   **🗺️ Interactive Navigation**: Integrated Google Maps and animated directions to help visitors reach the park easily.
-*   **📱 Social Integration**: Connect with us via our integrated social media feeds.
-*   **♿ Accessible & Fast**: Designed with performance and accessibility in mind, ensuring specific content reaches everyone.
+</div>
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## 🌟 About The Project
 
-This project is engineered for speed, SEO, and scalability using modern web technologies:
+Welcome to the **Official Digital Portal of Science Park Dhamtari**. Nestled near the scenic Gangrel Dam, this park is a modern temple of knowledge designed to ignite scientific curiosity in young minds and provide a serene learning environment for all.
 
-| Category | Technology |
+This platform bridges the gap between the physical park and the digital world, offering real-time updates, virtual galleries, and essential visitor information.
+
+### 🏛️ Official Recognition
+This project acts as the central information hub for the Science Park, recognized and supported by the local **Municipal Corporation** and **District Administration**.
+
+---
+
+## ✨ Features at a Glance
+
+| Feature | Description |
 | :--- | :--- |
-| **Framework** | [Next.js 16 (App Router)](https://nextjs.org/) |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/) |
-| **UI Components** | [Aceternity UI](https://ui.aceternity.com/) & [Radix UI](https://www.radix-ui.com/) |
-| **Animations** | [Framer Motion](https://www.framer.com/motion/) & [Lottie](https://lottiefiles.com/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
-| **Forms** | [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) |
-| **Deployment** | [Vercel](https://vercel.com/) |
+| **📰 News & Updates** | Stay informed with the latest inaugurations, events, and press releases provided in real-time. |
+| **📸 Virtual Gallery** | Experience high-definition visuals of our Indoor & Outdoor exhibits before you visit. |
+| **📱 Mobile First** | A fully responsive progressive web app (PWA) experience tailored for seamless mobile access. |
+| **🗺️ Smart Navigation** | Integrated Google Maps with one-click directions to guide visitors directly to the park. |
+| **🤳 Social Feed** | Live social media wall featuring our latest activities, reels, and community interactions. |
+| **♿ Accessibility** | Designed with inclusivity in mind, adhering to modern web accessibility standards. |
 
 ---
 
-## 📍 Visit Us
+## �️ Visual Tour
 
-The **Science Park** is a hub for educational tourism in Chhattisgarh.
+<div align="center">
+  <img src="public/assets/news/news_science_park_overview_1765004381936.png" alt="Science Park Overview" width="100%" style="border-radius: 10px; margin-bottom: 20px;" />
+</div>
 
-*   **Location**: Near Gangrel Dam, Dhamtari, Chhattisgarh.
-*   **Timings**: 10:00 AM - 6:00 PM (Open all days).
-*   **Entry Fee**: ₹10 per person.
-
-> "Science is a way of thinking much more than it is a body of knowledge."
+> *Experience the perfect blend of nature and technology.*
 
 ---
 
-## 🖥️ Local Development
+## 🛠️ Technology Stack
 
-To run this project locally:
+We utilize cutting-edge technologies to ensure speed, security, and scalability.
 
-1.  **Clone the repository**:
+-   **Frontend**: [Next.js 16](https://nextjs.org/) (App Router), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/), [Aceternity UI](https://ui.aceternity.com/)
+-   **Animation**: [Framer Motion](https://www.framer.com/motion/), [Lottie](https://lottiefiles.com/)
+-   **Forms**: [React Hook Form](https://react-hook-form.com/), [Zod](https://zod.dev/), [EmailJS](https://www.emailjs.com/)
+-   **Deployment**: [Vercel](https://vercel.com/) (Global Edge Network)
+
+---
+
+## � Getting Started locally
+
+To contribute or run this project on your local machine:
+
+1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/your-org/science-park.git
+    git clone https://github.com/kafilcodes/science-park.git
     cd science-park
     ```
 
-2.  **Install dependencies**:
+2.  **Install Dependencies**
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
-3.  **Run the development server**:
+3.  **Run Development Server**
     ```bash
     npm run dev
     ```
 
-4.  **Open in Browser**:
-    Navigate to [http://localhost:3000](http://localhost:3000).
+4.  **Access the App**
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🤝 Contribution
+## 📍 Visitor Information
 
-This is an **Official Government Project**. Contributions are welcome but must adhere to strict guidelines.
-Please open an issue to discuss proposed changes before submitting a Pull Request.
-
----
-
-## 📄 License
-
-© 2025 Science Park Dhamtari. All Rights Reserved.
-Content and design are property of the District Administration, Dhamtari.
+-   **Location**: [Rudri Road, Near Gangrel Dam, Dhamtari, Chhattisgarh](https://goo.gl/maps/YourMapLink)
+-   **Timings**: 10:00 AM - 06:00 PM (Daily)
+-   **Entry Fee**: ₹10 only
 
 ---
 
-<p align="center">
-  Built with ❤️ for the people of Dhamtari.
-</p>
+## 🤝 Contact Official
+
+For official inquiries, collaborations, or school visits:
+
+-   **District Administration**: [dhamtari.gov.in](https://dhamtari.gov.in)
+-   **Email**: info@scienceparkdhamtari.com
+-   **Emergency Contact**: check our [Contact Page](https://scienceparkdhamtari.com/#contact)
+
+---
+
+<div align="center">
+
+  **Science Park Dhamtari** © 2025  
+  *An Education & Tourism Initiative*
+
+  [![Status](https://img.shields.io/website?url=https%3A%2F%2Fscienceparkdhamtari.com&style=flat-square&label=System%20Status)](https://scienceparkdhamtari.com)
+
+</div>
